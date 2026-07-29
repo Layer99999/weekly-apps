@@ -1,0 +1,20 @@
+# 既定はすべて除外。公開すると決めたものだけ、下で明示的に許可する。
+# （新しいアプリのフォルダを足しても、ここに書かない限り公開されない）
+/*
+
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/README.md
+!/CNAME
+
+# 公開中のアプリ
+!/hanashikata-fingerprint/
+!/ai-shijibun-maker/
+
+# 作業中の控えファイルは公開しない
+*.bak
+*.bak-*
+*.pre-codex.bak
+index.html.bak*
+.DS_Store

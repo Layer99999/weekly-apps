@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff4e35">
+  <meta name="description" content="株式会社タイガーラボが公開している、無料で使える小さなアプリ。">
+  <title>アプリ一覧｜株式会社タイガーラボ</title>
+  <style>
+    :root{--paper:#f5f7f6;--ink:#121817;--ink-soft:#4f5b58;--accent:#ff4e35;--accent-dark:#d92e18;--mint:#c9f4e2;--yellow:#f8f270;--font:"Hiragino Sans","Yu Gothic UI","Noto Sans JP",system-ui,-apple-system,sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;min-width:320px;padding:max(28px,env(safe-area-inset-top)) 0 calc(40px + env(safe-area-inset-bottom));color:var(--ink);background:var(--paper);font-family:var(--font);font-size:16px;line-height:1.8;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+    .shell{width:min(100% - 36px,760px);margin-inline:auto}
+    .brand{display:flex;align-items:center;gap:9px;font-size:.82rem;font-weight:950;text-decoration:none;color:inherit}
+    .brand-mark{width:13px;height:13px;border-radius:50% 50% 50% 3px;background:var(--accent);transform:rotate(-10deg)}
+    h1{margin:34px 0 0;font-size:clamp(2rem,9vw,3.4rem);font-weight:950;line-height:1.2;letter-spacing:-.045em;text-wrap:balance}
+    .lead{max-width:560px;margin:16px 0 0;color:var(--ink-soft);font-size:clamp(.98rem,3.8vw,1.12rem);font-weight:680}
+    .list{display:grid;gap:16px;margin-top:36px}
+    .card{display:block;padding:24px 22px;border:2px solid var(--ink);border-radius:26px;background:#fff;box-shadow:8px 9px 0 var(--ink);color:inherit;text-decoration:none;transition:transform .18s,box-shadow .18s}
+    .card:hover,.card:focus-visible{transform:translate(-2px,-2px);box-shadow:11px 12px 0 var(--ink)}
+    .card:nth-child(2){background:var(--mint)}
+    .card h2{margin:0;font-size:clamp(1.25rem,5.4vw,1.7rem);font-weight:950;line-height:1.35;letter-spacing:-.035em}
+    .card p{margin:9px 0 0;color:var(--ink-soft);font-size:.9rem;font-weight:700;line-height:1.7}
+    .card .go{display:inline-flex;align-items:center;gap:8px;margin-top:15px;font-size:.85rem;font-weight:950;color:var(--accent-dark)}
+    .arrow{display:grid;width:26px;height:26px;place-items:center;border-radius:50%;background:var(--yellow);color:var(--ink)}
+    footer{margin-top:52px;padding-top:26px;border-top:2px solid rgba(18,24,23,.12);color:var(--ink-soft);font-size:.82rem;font-weight:700}
+    footer strong{color:var(--ink)}
+    footer a{color:var(--accent-dark);font-weight:900;text-underline-offset:4px}
+    :focus-visible{outline:4px solid rgba(18,24,23,.28);outline-offset:4px}
+    @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <a class="brand" href="https://tigerlabo.com"><span class="brand-mark" aria-hidden="true"></span>株式会社タイガーラボ</a>
+    <h1>無料で使える、<br>小さなアプリ。</h1>
+    <p class="lead">登録なし・無料で使えます。入力した内容は、お使いの端末の中だけで処理されます。</p>
+    <div class="list">
+      <a class="card" href="./hanashikata-fingerprint/">
+        <h2>AI回答しっくり診断</h2>
+        <p>LINEやメールで自分が送った文章を貼るだけ。あなたの話し方が22の動物のどれかに出ます。AIの返事がしっくりくるかも分かります。</p>
+        <span class="go">診断してみる <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="./ai-shijibun-maker/">
+        <h2>AIしっくり設定</h2>
+        <p>いつもの文章から、ChatGPT・Gemini・Claudeの設定欄に貼る文をつくります。返事があなたの言葉に近づきます。</p>
+        <span class="go">設定文をつくる <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+    <footer>
+      <p><strong>株式会社タイガーラボ</strong><br>業務でのAI活用のご相談から、システム・アプリの開発まで承っています。</p>
+      <p><a href="https://tigerlabo.com" target="_blank" rel="noopener noreferrer">サービス案内・お問い合わせ →</a></p>
+    </footer>
+  </div>
+</body>
+</html>
