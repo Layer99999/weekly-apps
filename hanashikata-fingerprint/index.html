@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ff4e35">
   <meta name="description" content="LINEやメールで自分が送った文章を貼るだけ。あなたの文のクセを診断して、AIの返事が心地よくなる「設定の文章」までプレゼントします。登録なし・無料。">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; connect-src 'none'; img-src data:; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; connect-src 'none'; img-src 'self' data:; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="株式会社タイガーラボ">
+  <meta property="og:title" content="AI回答しっくり診断｜あなたの話し方は、どの動物？">
+  <meta property="og:description" content="LINEやメールで自分が送った文章を貼るだけ。文のクセから22の動物タイプを診断して、AIの返事が心地よくなる「設定の文章」をプレゼントします！">
+  <meta property="og:image" content="https://apps.tigerlabo.com/hanashikata-fingerprint/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://apps.tigerlabo.com/hanashikata-fingerprint/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI回答しっくり診断｜あなたの話し方は、どの動物？">
+  <meta name="twitter:description" content="文章を貼るだけ。22の動物タイプで、あなたの話し方が分かります。">
+  <meta name="twitter:image" content="https://apps.tigerlabo.com/hanashikata-fingerprint/ogp.png">
   <title>AI回答しっくり診断｜あなたの話し方、AIが診断するとどんな形に？</title>
   <style>
 :root{color-scheme:light;--ink:#0b0e13;--ink-2:#4a515e;--ink-3:#646b77;--paper:#fafaf8;--surface:#fff;--line:rgba(11,14,19,.09);--line-2:rgba(11,14,19,.16);--accent:#ff4a2b;--accent-ink:#d6300f;--accent-wash:#fff2ee;--halo:#eef2fb;--dark:#0b0e13;--r-s:12px;--r-m:18px;--r-l:26px;--font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Noto Sans JP",system-ui,sans-serif;--num:"SF Pro Display",-apple-system,"Helvetica Neue",Arial,sans-serif;--shadow:0 1px 2px rgba(11,14,19,.04),0 12px 32px -12px rgba(11,14,19,.14);--shadow-lift:0 1px 2px rgba(11,14,19,.05),0 28px 60px -22px rgba(11,14,19,.22)}
@@ -49,7 +63,7 @@ a{color:inherit}
 /* ヘッダー */
 .site-header{position:relative;z-index:30;width:100%;padding:max(20px,env(safe-area-inset-top)) 0 20px;color:#fff;background:var(--accent);border-bottom:0}
 .header-inner{display:flex;justify-content:space-between;align-items:center;gap:14px}
-.brand{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;border-radius:999px;background:#fff;color:var(--accent-ink);font-size:clamp(1rem,3.9vw,1.16rem);font-weight:800;letter-spacing:-.025em;line-height:1;text-decoration:none;white-space:nowrap;flex:none}
+.brand{display:inline-flex;align-items:center;min-height:44px;gap:10px;padding:11px 18px 11px 14px;border-radius:999px;background:#fff;color:var(--accent-ink);font-size:clamp(1rem,3.9vw,1.16rem);font-weight:800;letter-spacing:-.025em;line-height:1;text-decoration:none;white-space:nowrap;flex:none}
 .brand-mark{position:relative;width:13px;height:13px;border-radius:50%;background:var(--accent);flex:none}
 .brand-mark:after{content:"";position:absolute;inset:-5px;border:1.5px solid rgba(255,74,43,.42);border-radius:50%}
 .privacy{display:none;color:rgba(255,255,255,.78);font-size:.72rem;font-weight:400;text-align:right;line-height:1.5}
@@ -181,7 +195,7 @@ textarea::placeholder{color:#a8aeb8}
 .result-actions .button-outline{color:rgba(255,255,255,.82)}
 .result-actions .button-outline:hover{color:#fff;border-color:#fff}
 .name-wrap{display:flex;gap:8px;margin-top:16px}
-.name-wrap input{min-width:0;flex:1;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:12px 17px;color:#fff;background:rgba(255,255,255,.06);font-size:.9rem}
+.name-wrap input{min-width:0;flex:1;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:13px 17px;color:#fff;background:rgba(255,255,255,.06);font-size:16px}
 .name-wrap input::placeholder{color:rgba(255,255,255,.42)}
 .name-wrap input:focus{outline:0;border-color:var(--accent)}
 .name-wrap button{min-height:48px;flex:none;border:0;border-radius:999px;padding:10px 18px;background:#fff;color:var(--ink);font-size:.86rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
@@ -220,11 +234,11 @@ textarea::placeholder{color:#a8aeb8}
 .compare-item.winner{border-color:var(--accent)}
 .winner-label{position:absolute;z-index:2;top:-11px;left:14px;padding:5px 12px;border-radius:999px;background:var(--accent-ink);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.03em}
 .compare-item canvas{display:block;width:100%;border-radius:var(--r-s);background:var(--paper)}
-.compare-item h3{margin:13px 3px 3px;font-size:.98rem;font-weight:700;letter-spacing:-.02em}
+.compare-item .compare-name{margin:13px 3px 3px;color:var(--ink);font-size:.98rem;font-weight:700;letter-spacing:-.02em}
 .compare-item p{margin:0 3px;color:var(--ink-3);font-size:.75rem;font-weight:400;line-height:1.6}
 .compare-score{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:11px;border-top:1px solid var(--line);color:var(--ink-3);font-size:.7rem;font-weight:500}
 .compare-score strong{color:var(--ink);font-family:var(--num),var(--font);font-size:1.36rem;font-weight:400;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
-.remove-compare{width:100%;min-height:38px;margin-top:8px;border:0;border-radius:999px;background:transparent;cursor:pointer;color:var(--ink-3);font-size:.72rem;font-weight:500;transition:color .2s}
+.remove-compare{width:100%;min-height:44px;margin-top:8px;border:0;border-radius:999px;background:transparent;cursor:pointer;color:var(--ink-3);font-size:.76rem;font-weight:500;transition:color .2s,background .2s}
 .remove-compare:hover{color:var(--accent-ink)}
 .compare-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .compare-actions .button{flex:1 1 180px}
@@ -267,7 +281,7 @@ textarea::placeholder{color:#a8aeb8}
 .footer-brand{font-size:1rem;font-weight:700}
 .footer p{margin:0;color:rgba(255,255,255,.66);font-size:.85rem;font-weight:400;line-height:1.85}
 .footer p strong{color:#fff;font-weight:700}
-.footer a{color:#ff8a72;font-weight:600;font-size:.88rem;text-underline-offset:5px}
+.footer a{display:inline-flex;align-items:center;min-height:44px;color:#ff8a72;font-weight:600;font-size:.9rem;text-underline-offset:5px}
 
 /* 画像の保存シート */
 .img-sheet{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:22px;background:rgba(11,14,19,.9);overflow-y:auto;backdrop-filter:blur(4px)}
@@ -816,6 +830,19 @@ html{scroll-behavior:auto}
       spec.draw(c, S);
     }
     function idFor(m){return"#"+m.hash.map(n=>n.toString(16).padStart(8,"0")).join("").slice(0,8).toUpperCase()}
+    /* 診断できる文章かを見る。日本語がほとんど無い／同じ字ばかり、は読み取れないので弾く */
+    function inputProblem(raw){
+      const compact=raw.replace(/\s/g,"");
+      if(!compact)return "empty";
+      const jp=(compact.match(/[ぁ-ゖァ-ヺ一-龠々ー]/g)||[]).length;
+      if(jp/compact.length<.45)return "japanese";
+      const uniq=new Set(compact).size;
+      if(uniq<10||uniq/compact.length<.16)return "variety";
+      return null}
+    const PROBLEM_MSG={
+      japanese:"日本語の文章で診断します。LINEやメールで自分が送った文章を、そのまま貼ってください。",
+      variety:"同じ文字が続いていて、話し方のクセを読み取れませんでした。ふだん書いている文章を貼ってください。",
+      empty:"文体を読み取るために、20文字以上の文章を入れてください。"};
     function resultData(text){const metrics=analyze(text),ti=typeIndexFor(metrics);return{id:idFor(metrics),createdAt:new Date().toISOString(),text,metrics,typeIndex:ti,type:TYPES[ti]}}
     /* 共有リンク: 「#」以降はサーバーに送られないので、そこに数値だけを載せる。本文と口ぐせは載せない */
     /* 他のページに埋め込まれている（iframe）と、外側のURLも「#」以降も中まで届かないので、リンクは作れない。
@@ -836,8 +863,9 @@ html{scroll-behavior:auto}
     function hideShared(){const s=$("#shared");if(s.hidden)return;s.hidden=true;try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}}
     function setupShareLinks(){const base=baseUrl(),urlEl=$("#share-url"),appBtn=$("#copy-app-link"),linkBtn=$("#copy-link");if(base){let shown=base;try{shown=decodeURI(base)}catch(e){}urlEl.textContent=shown;appBtn.disabled=false;linkBtn.disabled=false}else{const framed=isFramed();urlEl.textContent=framed?"このデモ版ではリンクを作れません":"リンクは、アプリをネットに置いたあとで出てきます";appBtn.disabled=true;linkBtn.disabled=true;$("#share-note").textContent=framed?"このデモは別のページの中で開かれているため、送れるリンクを作れません。":"いまは手元のファイルを開いている状態なので、送れるリンクがまだありません。";$("#link-note").textContent=framed?"このデモ版では、結果のリンクを作れません。公開版でお使いいただけます。":"結果のリンクは、アプリをネットに置いたあとで作れるようになります。"}}
     function renderHistory(){const list=safeGet(STORAGE_KEY);if(!list.length){els.history.innerHTML='<p class="history-empty">まだ診断履歴はありません。</p>';return}els.history.innerHTML=list.map((x,i)=>{const m=analyze(x.text),t=typeFor(m);return`<button class="history-item" type="button" data-history="${i}"><span class="history-thumb">${m.score}</span><span class="history-copy"><strong>${t[0]}</strong><small>${t[1]} ／ ${formatDate(x.createdAt)}</small></span><span class="history-arrow" aria-hidden="true">→</span></button>`}).join("")}
-    function renderCompare(){const list=safeGet(COMPARE_KEY),empty=$("#compare-empty"),save=$("#save-compare"),clear=$("#clear-compare");empty.hidden=!!list.length;save.hidden=!list.length;clear.hidden=!list.length;els.compare.innerHTML="";if(!list.length)return;const best=Math.max(...list.map(x=>x.score));list.forEach((x,i)=>{const card=document.createElement("article");card.className="compare-item"+(x.score===best?" winner":"");card.innerHTML=`${x.score===best?'<span class="winner-label">AIといちばん近い</span>':""}<canvas width="360" height="360" aria-hidden="true"></canvas><h3></h3><p></p><div class="compare-score"><span>AIしっくり度</span><strong>${x.score}</strong></div><button class="remove-compare" type="button" data-remove="${i}">比較から外す</button>`;card.querySelector("h3").textContent=x.name;card.querySelector("p").textContent=x.sub?x.type+"・"+x.sub:x.type;drawAnimal(card.querySelector("canvas"),x.typeIndex!=null?x.typeIndex:typeIndexFor(x.metrics),360);els.compare.appendChild(card)})}
-    function addCompare(){if(!current)return;const name=$("#compare-name").value.trim()||"診断 "+(safeGet(COMPARE_KEY).length+1),m=current.metrics,list=safeGet(COMPARE_KEY);list.push({name:name.slice(0,16),id:current.id,score:m.score,typeIndex:current.typeIndex,type:current.type[0],sub:current.type[1],metrics:m});safeSet(COMPARE_KEY,list.slice(-6));renderCompare();showToast(name+"を比較に追加しました");$("#compare-title").scrollIntoView({behavior:"smooth",block:"start"})}
+    function renderCompare(){const list=safeGet(COMPARE_KEY),empty=$("#compare-empty"),save=$("#save-compare"),clear=$("#clear-compare");empty.hidden=!!list.length;save.hidden=!list.length;clear.hidden=!list.length;els.compare.innerHTML="";if(!list.length)return;const best=Math.max(...list.map(x=>x.score));list.forEach((x,i)=>{const card=document.createElement("article");card.className="compare-item"+(x.score===best?" winner":"");card.innerHTML=`${x.score===best?'<span class="winner-label">AIといちばん近い</span>':""}<canvas width="360" height="360" aria-hidden="true"></canvas><p class="compare-name"></p><p></p><div class="compare-score"><span>AIしっくり度</span><strong>${x.score}</strong></div><button class="remove-compare" type="button" data-remove="${i}">比較から外す</button>`;card.querySelector(".compare-name").textContent=x.name;card.querySelector("p").textContent=x.sub?x.type+"・"+x.sub:x.type;drawAnimal(card.querySelector("canvas"),x.typeIndex!=null?x.typeIndex:typeIndexFor(x.metrics),360);els.compare.appendChild(card)})}
+    const COMPARE_MAX=6;
+    function addCompare(){if(!current)return;const name=$("#compare-name").value.trim()||"診断 "+(safeGet(COMPARE_KEY).length+1),m=current.metrics,list=safeGet(COMPARE_KEY);const dropped=list.length>=COMPARE_MAX?list[0].name:null;list.push({name:name.slice(0,16),id:current.id,score:m.score,typeIndex:current.typeIndex,type:current.type[0],sub:current.type[1],metrics:m});safeSet(COMPARE_KEY,list.slice(-COMPARE_MAX));renderCompare();showToast(dropped?"並べられるのは"+COMPARE_MAX+"人まで。いちばん古い「"+dropped+"」と入れ替えました":name+"を比較に追加しました");$("#compare-title").scrollIntoView({behavior:"smooth",block:"start"})}
     function rounded(c,x,y,w,h,r,fill){c.beginPath();c.roundRect(x,y,w,h,r);c.fillStyle=fill;c.fill()}
     /* 画像の保存。iPhoneは a[download] が効かず「表示／ダウンロード」で止まるので、
        まず共有シート（写真に保存が選べる）に渡す。使えない端末はそのまま保存、
@@ -855,7 +883,7 @@ html{scroll-behavior:auto}
     function wrapText(c,text,x,y,max,line){let row="";for(const ch of text){if(c.measureText(row+ch).width>max){c.fillText(row,x,y);row=ch;y+=line}else row+=ch}if(row)c.fillText(row,x,y);return y}
     function saveCompare(){const list=safeGet(COMPARE_KEY);if(!list.length)return;const cols=Math.min(3,list.length),rows=Math.ceil(list.length/cols),out=document.createElement("canvas");out.width=1200;out.height=250+rows*470;const c=out.getContext("2d");c.fillStyle="#f5f7f6";c.fillRect(0,0,out.width,out.height);c.fillStyle="#121817";c.font='950 56px "Hiragino Sans",sans-serif';c.fillText("話し方を、動物で比べてみた。",55,85);c.fillStyle="#d92e18";c.font='900 24px sans-serif';c.fillText("AI回答しっくり診断 ／ tigerlabo.com",55,135);const best=Math.max(...list.map(x=>x.score));list.forEach((x,i)=>{const col=i%cols,row=Math.floor(i/cols),w=350,x0=45+col*390,y0=190+row*470;rounded(c,x0,y0,w,420,28,x.score===best?"#f8f270":"#fff");const fp=document.createElement("canvas");drawAnimal(fp,x.typeIndex!=null?x.typeIndex:typeIndexFor(x.metrics),500);c.drawImage(fp,x0+20,y0+20,310,310);c.fillStyle="#121817";c.font='900 26px "Hiragino Sans",sans-serif';c.fillText(x.name,x0+20,y0+362);c.fillStyle="#d92e18";c.font='950 34px sans-serif';c.fillText(String(x.score),x0+280,y0+362);c.fillStyle="#121817";c.font='950 24px "Hiragino Sans",sans-serif';c.fillText(x.type,x0+20,y0+394);c.fillStyle="#4f5b58";c.font='700 16px "Hiragino Sans",sans-serif';c.fillText(x.sub||"",x0+20,y0+416)});downloadCanvas(out,"AI回答しっくり診断-くらべた結果.png");showToast("比較カードを保存しました")}
     function setupReveal(){const items=document.querySelectorAll(".reveal");if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){items.forEach(x=>x.classList.add("is-visible"));return}const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-visible");o.unobserve(e.target)}}),{threshold:.12});items.forEach(x=>o.observe(x))}
-    document.querySelectorAll("[data-sample]").forEach(b=>b.addEventListener("click",()=>{els.source.value=samples[b.dataset.sample];els.count.textContent=els.source.value.length.toLocaleString("ja-JP")+" / 3,000";els.error.hidden=true;els.source.focus();showToast("サンプルを入れました") }));els.source.addEventListener("input",()=>{els.count.textContent=els.source.value.length.toLocaleString("ja-JP")+" / 3,000";if(els.source.value.trim().replace(/\s/g,"").length>=20)els.error.hidden=true});els.form.addEventListener("submit",e=>{e.preventDefault();const text=els.source.value.trim();if(text.replace(/\s/g,"").length<20){els.error.hidden=false;els.source.setAttribute("aria-invalid","true");els.source.focus();return}els.source.removeAttribute("aria-invalid");els.error.hidden=true;hideShared();const item=resultData(text);display(item);saveHistory(item);showToast("診断ができました")});$("#add-compare").addEventListener("click",addCompare);$("#save-card").addEventListener("click",saveCard);$("#save-compare").addEventListener("click",saveCompare);$("#clear-compare").addEventListener("click",()=>{safeSet(COMPARE_KEY,[]);renderCompare();showToast("比較をクリアしました")});$("#redo").addEventListener("click",()=>{$("#diagnosis").scrollIntoView({behavior:"smooth"});setTimeout(()=>{els.source.focus();els.source.select()},450)});els.history.addEventListener("click",e=>{const b=e.target.closest("[data-history]");if(!b)return;const x=safeGet(STORAGE_KEY)[Number(b.dataset.history)];if(x){els.source.value=x.text;els.count.textContent=x.text.length.toLocaleString("ja-JP")+" / 3,000";display(resultData(x.text));showToast("過去の診断を呼び出しました")}});els.compare.addEventListener("click",e=>{const b=e.target.closest("[data-remove]");if(!b)return;const list=safeGet(COMPARE_KEY);list.splice(Number(b.dataset.remove),1);safeSet(COMPARE_KEY,list);renderCompare()});$("#copy-app-link").addEventListener("click",async()=>{const u=baseUrl();if(!u){showToast("リンクは、ネットに置いたあとで使えます");return}showToast(await copyText(u)?"リンクをコピーしました。LINEやXに貼りつけられます":"コピーできませんでした")});$("#copy-link").addEventListener("click",async()=>{if(!current)return;const b=baseUrl();if(!b){showToast("結果のリンクは、ネットに置いたあとで作れます");return}showToast(await copyText(b+"#"+encodeResult(current,$("#share-name").value))?"結果のリンクをコピーしました":"コピーできませんでした")});setupReveal();renderHistory();renderCompare();setupShareLinks();const incoming=decodeResult(location.hash);if(incoming)renderShared(incoming);window.addEventListener("hashchange",()=>{const d=decodeResult(location.hash);if(d){renderShared(d);$("#shared").scrollIntoView({behavior:"smooth",block:"start"})}});
+    document.querySelectorAll("[data-sample]").forEach(b=>b.addEventListener("click",()=>{els.source.value=samples[b.dataset.sample];els.count.textContent=els.source.value.length.toLocaleString("ja-JP")+" / 3,000";els.error.hidden=true;els.source.focus();showToast("サンプルを入れました") }));els.source.addEventListener("input",()=>{els.count.textContent=els.source.value.length.toLocaleString("ja-JP")+" / 3,000";if(els.source.value.trim().replace(/\s/g,"").length>=20)els.error.hidden=true});els.form.addEventListener("submit",e=>{e.preventDefault();const text=els.source.value.trim();const short=text.replace(/\s/g,"").length<20,problem=short?"empty":inputProblem(text);if(problem){els.error.textContent=PROBLEM_MSG[problem];els.error.hidden=false;els.source.setAttribute("aria-invalid","true");els.error.scrollIntoView({behavior:"smooth",block:"center"});els.source.focus();return}els.source.removeAttribute("aria-invalid");els.error.hidden=true;hideShared();const item=resultData(text);display(item);saveHistory(item);showToast("診断ができました")});$("#add-compare").addEventListener("click",addCompare);$("#save-card").addEventListener("click",saveCard);$("#save-compare").addEventListener("click",saveCompare);$("#clear-compare").addEventListener("click",()=>{safeSet(COMPARE_KEY,[]);renderCompare();showToast("比較をクリアしました")});$("#redo").addEventListener("click",()=>{$("#diagnosis").scrollIntoView({behavior:"smooth"});setTimeout(()=>{els.source.focus();els.source.select()},450)});els.history.addEventListener("click",e=>{const b=e.target.closest("[data-history]");if(!b)return;const x=safeGet(STORAGE_KEY)[Number(b.dataset.history)];if(x){els.source.value=x.text;els.count.textContent=x.text.length.toLocaleString("ja-JP")+" / 3,000";display(resultData(x.text));showToast("過去の診断を呼び出しました")}});els.compare.addEventListener("click",e=>{const b=e.target.closest("[data-remove]");if(!b)return;const list=safeGet(COMPARE_KEY);list.splice(Number(b.dataset.remove),1);safeSet(COMPARE_KEY,list);renderCompare()});$("#copy-app-link").addEventListener("click",async()=>{const u=baseUrl();if(!u){showToast("リンクは、ネットに置いたあとで使えます");return}showToast(await copyText(u)?"リンクをコピーしました。LINEやXに貼りつけられます":"コピーできませんでした")});$("#copy-link").addEventListener("click",async()=>{if(!current)return;const b=baseUrl();if(!b){showToast("結果のリンクは、ネットに置いたあとで作れます");return}showToast(await copyText(b+"#"+encodeResult(current,$("#share-name").value))?"結果のリンクをコピーしました":"コピーできませんでした")});setupReveal();renderHistory();renderCompare();setupShareLinks();const incoming=decodeResult(location.hash);if(incoming)renderShared(incoming);window.addEventListener("hashchange",()=>{const d=decodeResult(location.hash);if(d){renderShared(d);$("#shared").scrollIntoView({behavior:"smooth",block:"start"})}});
   })();
   </script>
 </body>
