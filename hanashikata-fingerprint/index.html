@@ -8,7 +8,10 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; connect-src 'none'; img-src data:; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
   <title>AI回答しっくり診断｜あなたの話し方、AIが診断するとどんな形に？</title>
   <style>
-:root{color-scheme:light;--ink:#0b0e13;--ink-2:#4a515e;--ink-3:#8b929d;--paper:#fafaf8;--surface:#fff;--line:rgba(11,14,19,.09);--line-2:rgba(11,14,19,.16);--accent:#ff4a2b;--accent-ink:#d6300f;--accent-wash:#fff2ee;--halo:#eef2fb;--dark:#0b0e13;--r-s:12px;--r-m:18px;--r-l:26px;--font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Noto Sans JP",system-ui,sans-serif;--num:"SF Pro Display",-apple-system,"Helvetica Neue",Arial,sans-serif;--shadow:0 1px 2px rgba(11,14,19,.04),0 12px 32px -12px rgba(11,14,19,.14);--shadow-lift:0 1px 2px rgba(11,14,19,.05),0 28px 60px -22px rgba(11,14,19,.22)}
+:root{color-scheme:light;--ink:#0b0e13;--ink-2:#4a515e;--ink-3:#646b77;--paper:#fafaf8;--surface:#fff;--line:rgba(11,14,19,.09);--line-2:rgba(11,14,19,.16);--accent:#ff4a2b;--accent-ink:#d6300f;--accent-wash:#fff2ee;--halo:#eef2fb;--dark:#0b0e13;--r-s:12px;--r-m:18px;--r-l:26px;--font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Noto Sans JP",system-ui,sans-serif;--num:"SF Pro Display",-apple-system,"Helvetica Neue",Arial,sans-serif;--shadow:0 1px 2px rgba(11,14,19,.04),0 12px 32px -12px rgba(11,14,19,.14);--shadow-lift:0 1px 2px rgba(11,14,19,.05),0 28px 60px -22px rgba(11,14,19,.22)}
+.dark-mesh{position:relative;overflow:hidden}
+.dark-mesh:before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(64% 46% at 16% -4%,rgba(255,74,43,.30),transparent 68%),radial-gradient(52% 40% at 96% 14%,rgba(66,132,190,.22),transparent 70%),radial-gradient(70% 50% at 50% 108%,rgba(255,74,43,.16),transparent 66%)}
+.dark-mesh:after{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(255,255,255,.055) .9px,transparent .9px);background-size:20px 20px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--paper);-webkit-text-size-adjust:100%}
 body{margin:0;min-width:320px;color:var(--ink);background:var(--paper);font-family:var(--font);font-size:16px;font-weight:400;line-height:1.9;letter-spacing:.015em;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -44,17 +47,17 @@ a{color:inherit}
 .arrow{display:grid;width:22px;height:22px;place-items:center;border-radius:50%;border:1px solid currentColor;font-size:.72rem;line-height:1;opacity:.85}
 
 /* ヘッダー */
-.site-header{position:relative;z-index:30;width:100%;padding:max(18px,env(safe-area-inset-top)) 0 17px;color:#fff;background:var(--accent);border-bottom:0}
+.site-header{position:relative;z-index:30;width:100%;padding:max(20px,env(safe-area-inset-top)) 0 20px;color:#fff;background:var(--accent);border-bottom:0}
 .header-inner{display:flex;justify-content:space-between;align-items:center;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;font-size:.86rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;flex:none}
-.brand-mark{position:relative;width:11px;height:11px;border-radius:50%;background:#fff;flex:none}
-.brand-mark:after{content:"";position:absolute;inset:-5px;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+.brand{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;border-radius:999px;background:#fff;color:var(--accent-ink);font-size:clamp(1rem,3.9vw,1.16rem);font-weight:800;letter-spacing:-.025em;line-height:1;text-decoration:none;white-space:nowrap;flex:none}
+.brand-mark{position:relative;width:13px;height:13px;border-radius:50%;background:var(--accent);flex:none}
+.brand-mark:after{content:"";position:absolute;inset:-5px;border:1.5px solid rgba(255,74,43,.42);border-radius:50%}
 .privacy{display:none;color:rgba(255,255,255,.78);font-size:.72rem;font-weight:400;text-align:right;line-height:1.5}
 
 /* ヒーロー：色ブロックをやめ、余白と1本の弧で構成 */
 .hero{position:relative;padding:54px 0 128px;color:#fff;background:var(--accent);overflow:hidden}
 .hero:before{content:"";position:absolute;z-index:0;top:-30%;right:-26%;width:min(88vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 32%,rgba(255,255,255,.26),transparent 62%);pointer-events:none}
-.hero:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:-1px;height:190px;background:linear-gradient(180deg,transparent,var(--paper) 84%);pointer-events:none}
+.hero:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:-1px;height:200px;background:linear-gradient(180deg,transparent,var(--dark) 88%);pointer-events:none}
 .hero-grid{position:relative;z-index:2;display:grid;gap:30px}
 .kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(255,255,255,.14);font-family:var(--num),var(--font);font-size:.7rem;font-weight:600;letter-spacing:.1em}
 .kicker span{color:var(--accent-ink)}
@@ -71,15 +74,20 @@ a{color:inherit}
 .lock:before{content:"";position:absolute;left:3px;top:-5px;width:6px;height:7px;border:1.4px solid currentColor;border-bottom:0;border-radius:5px 5px 0 0}
 
 /* 共感パート：吹き出しをやめ、番号つきの静かな一覧に */
-.empathy{padding:34px 0 20px}
-.empathy-grid{display:grid;gap:0;margin-top:32px;border:1px solid var(--line-2);border-radius:var(--r-l);overflow:hidden;background:var(--surface)}
-.pain-card{position:relative;display:block;padding:26px 22px 30px;border-bottom:1px solid var(--line-2)}
-.pain-card:after{content:"↗";position:absolute;top:22px;right:20px;width:auto;height:auto;background:none;clip-path:none;color:var(--ink-3);font-size:.9rem;line-height:1}
+.empathy{position:relative;padding:44px 0 78px;color:#f4f5f7;background:var(--dark);overflow:hidden}
+.empathy>.shell{position:relative;z-index:1}
+.empathy .eyebrow{color:#ff8a72}
+.empathy .section-title{color:#fff}
+.empathy .ghost{color:#fff;opacity:.34}
+.empathy:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:-1px;height:150px;background:linear-gradient(180deg,transparent,var(--paper) 92%);pointer-events:none}
+.empathy-grid{position:relative;z-index:1;display:grid;gap:0;margin-top:32px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r-l);overflow:hidden;background:rgba(255,255,255,.05)}
+.pain-card{position:relative;display:block;padding:26px 22px 30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.pain-card:after{content:"↗";position:absolute;top:22px;right:20px;width:auto;height:auto;background:none;clip-path:none;color:rgba(255,255,255,.45);font-size:.9rem;line-height:1}
 .pain-card:last-child{border-bottom:0}
-.number{display:block;width:auto;height:auto;margin:0 0 12px;border:0;border-radius:0;color:var(--ink-3);font-family:var(--num),var(--font);font-size:.68rem;font-weight:600;letter-spacing:.14em}
-.pain-card p{margin:0;font-size:clamp(1rem,4.1vw,1.16rem);font-weight:500;line-height:1.82;letter-spacing:.005em}
-.pain-card mark{color:var(--ink);background:transparent;box-shadow:inset 0 -.42em 0 var(--accent-wash);font-weight:700}
-.empathy-close{max-width:22em;margin:44px 0 0;font-size:clamp(1.4rem,5.6vw,2.4rem);font-weight:800;line-height:1.4;letter-spacing:-.04em}
+.number{display:block;width:auto;height:auto;margin:0 0 12px;border:0;border-radius:0;color:rgba(255,255,255,.45);font-family:var(--num),var(--font);font-size:.68rem;font-weight:600;letter-spacing:.14em}
+.pain-card p{margin:0;color:rgba(255,255,255,.92);font-size:clamp(1rem,4.1vw,1.16rem);font-weight:500;line-height:1.82;letter-spacing:.005em}
+.pain-card mark{color:#fff;background:transparent;box-shadow:inset 0 -.42em 0 rgba(255,74,43,.4);font-weight:700}
+.empathy-close{position:relative;z-index:1;max-width:22em;margin:44px 0 0;color:#fff;font-size:clamp(1.4rem,5.6vw,2.4rem);font-weight:800;line-height:1.4;letter-spacing:-.04em}
 .empathy-close span{color:var(--accent)}
 
 /* 入力パート：赤ベタをやめ、白い作業台として組む */
@@ -111,9 +119,9 @@ textarea::placeholder{color:#a8aeb8}
 .privacy-note{position:relative;z-index:2;margin:18px 0 0;color:var(--ink-3);font-size:.75rem;font-weight:400;line-height:1.75;text-align:center}
 
 /* 結果：計器として組む。暗い面は締めのためだけに使う */
-.result{padding:64px 0 100px;color:#f4f5f7;background:var(--dark);position:relative;overflow:hidden}
-.result:before{content:"";position:absolute;z-index:0;top:-16%;left:50%;width:min(120vw,900px);aspect-ratio:1;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,74,43,.16),transparent 62%);pointer-events:none}
-.result:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:-1px;height:150px;background:linear-gradient(180deg,transparent,var(--paper) 92%);pointer-events:none}
+.result{padding:64px 0 110px;color:#f4f5f7;background:var(--dark);position:relative;overflow:hidden}
+.result:before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(64% 46% at 16% -4%,rgba(255,74,43,.30),transparent 68%),radial-gradient(52% 40% at 96% 14%,rgba(66,132,190,.22),transparent 70%),radial-gradient(70% 50% at 50% 108%,rgba(255,74,43,.16),transparent 66%)}
+.result:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:-1px;height:170px;background:linear-gradient(180deg,transparent,var(--accent) 92%);pointer-events:none}
 .shared:after{display:none}
 .result-head{position:relative;z-index:2;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px}
 .result .eyebrow{color:#ff8a72}
@@ -193,8 +201,10 @@ textarea::placeholder{color:#a8aeb8}
 .shared-cta .button{flex:0 0 auto}
 
 /* もうひとつのアプリ */
-.sister{padding:66px 0}
-.sister-card{position:relative;overflow:hidden;padding:34px 26px;border:1px solid var(--line);border-radius:var(--r-l);background:var(--surface);box-shadow:var(--shadow)}
+.sister{position:relative;padding:66px 0 96px;background:var(--accent);overflow:hidden}
+.sister>.shell{position:relative;z-index:1}
+.sister:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:-1px;height:150px;background:linear-gradient(180deg,transparent,var(--paper) 92%);pointer-events:none}
+.sister-card{position:relative;overflow:hidden;padding:34px 26px;border:0;border-radius:var(--r-l);background:var(--surface);box-shadow:0 30px 70px -30px rgba(11,14,19,.5)}
 .sister-card:after{content:"";position:absolute;z-index:0;top:-40%;right:-16%;width:min(70vw,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 40%,var(--accent-wash),transparent 66%);font-size:0}
 .sister-card h2{position:relative;z-index:1;margin:16px 0 14px;font-size:clamp(1.75rem,7vw,2.9rem);font-weight:800;line-height:1.24;letter-spacing:-.05em;text-wrap:balance}
 .sister-card p{position:relative;z-index:1;max-width:34em;margin:0;color:var(--ink-2);font-size:.97rem;font-weight:400;line-height:1.95}
@@ -208,7 +218,7 @@ textarea::placeholder{color:#a8aeb8}
 .compare-list{display:flex;gap:14px;overflow-x:auto;padding:2px 2px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .compare-item{position:relative;min-width:196px;max-width:220px;scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--r-l);padding:12px;background:var(--surface);box-shadow:var(--shadow)}
 .compare-item.winner{border-color:var(--accent)}
-.winner-label{position:absolute;z-index:2;top:-11px;left:14px;padding:4px 11px;border-radius:999px;background:var(--accent);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.03em}
+.winner-label{position:absolute;z-index:2;top:-11px;left:14px;padding:5px 12px;border-radius:999px;background:var(--accent-ink);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.03em}
 .compare-item canvas{display:block;width:100%;border-radius:var(--r-s);background:var(--paper)}
 .compare-item h3{margin:13px 3px 3px;font-size:.98rem;font-weight:700;letter-spacing:-.02em}
 .compare-item p{margin:0 3px;color:var(--ink-3);font-size:.75rem;font-weight:400;line-height:1.6}
@@ -234,23 +244,30 @@ textarea::placeholder{color:#a8aeb8}
 .history-item:hover .history-arrow{border-color:var(--ink);color:var(--ink)}
 
 /* 友だちに送る */
-.share{padding:66px 0;border-top:1px solid var(--line)}
-.share-block{margin-top:34px;padding:28px 24px;border:1px solid var(--line);border-radius:var(--r-l);background:var(--surface);box-shadow:var(--shadow)}
-.share-block-label{margin:0;font-size:clamp(1.3rem,5.4vw,1.85rem);font-weight:800;line-height:1.34;letter-spacing:-.045em}
-.share-block-sub{margin:11px 0 0;color:var(--ink-2);font-size:.88rem;font-weight:400;line-height:1.85}
-.share-url{margin:18px 0 0;padding:13px 15px;border:1px solid var(--line);border-radius:var(--r-s);background:#fcfcfb;color:var(--ink-2);font-family:var(--num),var(--font);font-size:.76rem;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
-.share-copy{width:100%;min-height:58px;margin-top:14px;border:0;border-radius:999px;color:#fff;background:var(--ink);cursor:pointer;font-size:.98rem;font-weight:700;transition:background .2s}
+.share{position:relative;padding:66px 0;color:#f4f5f7;background:var(--dark);border-top:0;overflow:hidden}
+.share>.shell{position:relative;z-index:1}
+.share .eyebrow{color:#ff8a72}
+.share .section-title{color:#fff}
+.share .ghost{color:#fff;opacity:.34}
+.share .section-lead{color:rgba(255,255,255,.72)}
+.share:before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(60% 44% at 12% 0%,rgba(255,74,43,.26),transparent 68%),radial-gradient(50% 40% at 92% 90%,rgba(66,132,190,.2),transparent 70%)}
+.share-block{position:relative;z-index:1;margin-top:34px;padding:28px 24px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r-l);background:rgba(255,255,255,.05);box-shadow:none}
+.share-block-label{margin:0;color:#fff;font-size:clamp(1.3rem,5.4vw,1.85rem);font-weight:800;line-height:1.34;letter-spacing:-.045em}
+.share-block-sub{margin:11px 0 0;color:rgba(255,255,255,.7);font-size:.88rem;font-weight:400;line-height:1.85}
+.share-url{margin:18px 0 0;padding:13px 15px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r-s);background:rgba(255,255,255,.05);color:rgba(255,255,255,.74);font-family:var(--num),var(--font);font-size:.76rem;font-weight:400;line-height:1.65;overflow-wrap:anywhere}
+.share-copy{width:100%;min-height:58px;margin-top:14px;border:0;border-radius:999px;color:var(--ink);background:#fff;cursor:pointer;font-size:.98rem;font-weight:700;transition:background .2s,color .2s}
+.share-copy:hover{color:#fff;background:var(--accent)}
 .share-copy:hover{background:var(--accent)}
 .share-copy:disabled{opacity:.34;cursor:not-allowed;background:var(--ink)}
-.share-note{margin:15px 0 0;color:var(--ink-3);font-size:.75rem;font-weight:400;line-height:1.75}
+.share-note{margin:15px 0 0;color:rgba(255,255,255,.5);font-size:.75rem;font-weight:400;line-height:1.75}
 
 /* フッター */
-.footer{padding:60px 0 calc(46px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.footer{padding:60px 0 calc(46px + env(safe-area-inset-bottom));color:#f4f5f7;background:var(--dark);border-top:1px solid rgba(255,255,255,.1)}
 .footer-grid{display:grid;gap:22px}
 .footer-brand{font-size:1rem;font-weight:700}
-.footer p{margin:0;color:var(--ink-2);font-size:.85rem;font-weight:400;line-height:1.85}
-.footer p strong{color:var(--ink);font-weight:700}
-.footer a{color:var(--accent-ink);font-weight:600;font-size:.88rem;text-underline-offset:5px}
+.footer p{margin:0;color:rgba(255,255,255,.66);font-size:.85rem;font-weight:400;line-height:1.85}
+.footer p strong{color:#fff;font-weight:700}
+.footer a{color:#ff8a72;font-weight:600;font-size:.88rem;text-underline-offset:5px}
 
 /* 画像の保存シート */
 .img-sheet{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:22px;background:rgba(11,14,19,.9);overflow-y:auto;backdrop-filter:blur(4px)}
@@ -273,7 +290,7 @@ textarea::placeholder{color:#a8aeb8}
 .shell{width:min(100% - 72px,1080px)}
 .hero{padding:96px 0 176px}
 .hero-grid{grid-template-columns:minmax(0,1fr)}
-.empathy{padding:56px 0 32px}
+.empathy{padding:64px 0 104px}
 .empathy-grid{grid-template-columns:repeat(3,1fr)}
 .pain-card{padding:34px 28px 40px;border-bottom:0;border-right:1px solid var(--line-2)}.pain-card:last-child{border-right:0}
 .tool{padding:104px 0 112px}
@@ -284,7 +301,7 @@ textarea::placeholder{color:#a8aeb8}
 .score-card,.metrics-card{grid-column:1/-1}.score-card{grid-template-columns:minmax(0,auto) 1fr;align-items:center;gap:38px}
 .shared{padding:92px 0 100px}
 .shared-cta{padding:28px 32px}
-.sister{padding:104px 0}
+.sister{padding:104px 0 140px}
 .sister-card{padding:56px 52px}
 .compare{padding:100px 0}
 .compare-item{min-width:220px}
@@ -318,13 +335,13 @@ html{scroll-behavior:auto}
   <main id="main">
     <section class="result shared" id="shared" aria-labelledby="shared-title" hidden><div class="shell"><div class="result-head"><div><p class="eyebrow" id="shared-owner">友だちの診断結果</p><h2 class="section-title" id="shared-title"><span class="ghost">届いた、</span><br>この人の動物。</h2></div><span class="result-badge">受け取ったリンクの結果</span></div><div class="result-grid"><div class="fingerprint-panel"><div class="art-wrap"><canvas id="shared-canvas" width="900" height="900" role="img" aria-label="送られてきた診断結果の動物"></canvas><span class="art-name" id="shared-art-name">—</span></div><div class="fingerprint-id"><span>診断結果</span></div></div><div class="result-info"><article class="score-card"><div class="score-ring" id="shared-ring"><strong id="shared-score">0</strong></div><div class="score-copy"><small>AIしっくり度（100点満点）</small><h3 id="shared-score-label">—</h3><p id="shared-score-note"></p></div></article><article class="type-card"><small>この人を動物にすると</small><h3 id="shared-animal">—</h3><p class="type-sub" id="shared-type">診断タイプ</p><p class="type-why" id="shared-why"></p><p id="shared-type-note"></p><div class="trait-box"><strong>この人、こんなところが</strong><ul class="trait-list" id="shared-traits"></ul></div><div class="match-box"><div class="match-row"><span>話が合いそう</span><strong id="shared-match-good">—</strong></div><div class="match-row"><span>いいコンビ</span><strong id="shared-match-fill">—</strong></div></div></article><article class="metrics-card"><small>文章の特徴</small><div class="metric-list"><div class="metric-row"><span>ていねい度</span><div class="metric-track"><div class="metric-fill" id="shared-formal-fill"></div></div><span id="shared-formal-value">0</span></div><div class="metric-row"><span>文の長さ</span><div class="metric-track"><div class="metric-fill" id="shared-length-fill"></div></div><span id="shared-length-value">0</span></div><div class="metric-row"><span>絵文字</span><div class="metric-track"><div class="metric-fill" id="shared-emoji-fill"></div></div><span id="shared-emoji-value">0</span></div><div class="metric-row"><span>口ぐせ</span><div class="metric-track"><div class="metric-fill" id="shared-phrase-fill"></div></div><span id="shared-phrase-value">0</span></div><div class="metric-row"><span>語彙の幅</span><div class="metric-track"><div class="metric-fill" id="shared-vocab-fill"></div></div><span id="shared-vocab-value">0</span></div></div></article></div></div><div class="shared-cta"><p>あなたは、どの動物？</p><a class="button button-white" href="#diagnosis">自分もやってみる <span class="arrow" aria-hidden="true">→</span></a></div></div></section>
     <section class="hero" id="top"><div class="shell hero-grid"><div><h1>あなたの話し方、<br><span class="ghost">AIが診断すると</span><br><em>どんな形</em>に？</h1><p class="hero-sub">LINEやメールで自分が送った文章を貼るだけ。あなたの文のクセを診断して、<em>AIの返事が心地よくなる「設定の文章」</em>をプレゼントします！</p><div class="hero-actions"><a class="button button-dark" href="#diagnosis">診断してみる <span class="arrow" aria-hidden="true">↓</span></a><p class="trust"><span class="lock" aria-hidden="true"></span>登録なし・無料<br>文章はどこにも送信しません</p></div></div></div></section>
-    <section class="empathy" aria-labelledby="empathy-title"><div class="shell"><p class="eyebrow reveal">診断する前に</p><h2 class="section-title reveal" id="empathy-title"><span class="ghost">こんなこと、</span><br>ない？</h2><div class="empathy-grid"><article class="pain-card reveal"><span class="number">01</span><p>AIの返事、なんか<mark>自分の言葉じゃない。</mark>読めるけど、自分では言わない言い回し。</p></article><article class="pain-card reveal"><span class="number">02</span><p>自分の書き方のクセって、意外と<mark>自分では分からない。</mark></p></article><article class="pain-card reveal"><span class="number">03</span><p>AIに“私らしさ”をどう伝えればいいのか、<mark>そもそも分からない。</mark></p></article></div><p class="empathy-close reveal">まずは、あなたの<span>話し方のクセ</span>を<br>見てみませんか。</p></div></section>
+    <section class="empathy dark-mesh" aria-labelledby="empathy-title"><div class="shell"><p class="eyebrow reveal">診断する前に</p><h2 class="section-title reveal" id="empathy-title"><span class="ghost">こんなこと、</span><br>ない？</h2><div class="empathy-grid"><article class="pain-card reveal"><span class="number">01</span><p>AIの返事、なんか<mark>自分の言葉じゃない。</mark>読めるけど、自分では言わない言い回し。</p></article><article class="pain-card reveal"><span class="number">02</span><p>自分の書き方のクセって、意外と<mark>自分では分からない。</mark></p></article><article class="pain-card reveal"><span class="number">03</span><p>AIに“私らしさ”をどう伝えればいいのか、<mark>そもそも分からない。</mark></p></article></div><p class="empathy-close reveal">まずは、あなたの<span>話し方のクセ</span>を<br>見てみませんか。</p></div></section>
     <section class="tool" id="diagnosis" aria-labelledby="tool-title"><div class="shell"><p class="eyebrow">診断する</p><h2 class="section-title" id="tool-title"><span class="ghost">文章を貼って、</span><br>クセを見る。</h2><p class="section-lead">LINE、メール、SNSの投稿、日記。<strong>あなたが書いて送ったほう</strong>の文章を貼ってください。100文字くらいあると、はっきり出ます。</p><span class="local-badge">入力した文章は端末の中だけで処理されます</span><form class="diagnose-card" id="diagnose-form" novalidate><div class="step-head"><span class="step-number">01</span><div class="step-copy"><small>あなたが書いた文章</small><h3>LINEやメールから<br>コピーして貼る</h3></div></div><div class="input-wrap"><label class="sr-only" for="source-text">診断する文章</label><textarea id="source-text" maxlength="3000" aria-describedby="input-help char-count" placeholder="例）今日は朝からバタバタ。でも、やることを3つに絞ったら意外と進んだ。全部ちゃんとやろうとしなくていいのかも。"></textarea><p class="char-count" id="char-count">0 / 3,000</p></div><div class="sample-area" id="input-help"><span class="sample-label">すぐ試したい人は、サンプルでどうぞ</span><div class="chips"><button class="chip" type="button" data-sample="polite">ていねいな人</button><button class="chip" type="button" data-sample="casual">くだけた人</button><button class="chip" type="button" data-sample="emoji">絵文字多めの人</button></div></div><button class="diagnose-submit" type="submit">診断する →</button></form><p class="error" id="form-error" role="alert" hidden>文体を読み取るために、20文字以上の文章を入れてください。</p><p class="privacy-note">入力した文章が外部に送られることはありません。解析も保存も、お使いの端末の中だけで行われます。</p></div></section>
-    <section class="result" id="result" aria-labelledby="result-title" hidden><div class="shell"><div class="result-head"><div><p class="eyebrow">あなたの診断結果</p><h2 class="section-title" id="result-title"><span class="ghost">あなたは、</span><br>この動物。</h2></div><span class="result-badge">同じ文章なら、同じ結果</span></div><div class="result-grid"><div class="fingerprint-panel"><div class="art-wrap"><canvas id="fingerprint" width="900" height="900" role="img" aria-label="診断結果の動物"></canvas><span class="art-name" id="art-name">—</span></div><div class="fingerprint-id"><span>診断結果</span></div></div><div class="result-info"><article class="score-card"><div class="score-ring" id="score-ring"><strong id="score-value">0</strong></div><div class="score-copy"><small>AIしっくり度（100点満点）</small><h3 id="score-label">—</h3><p id="score-note">標準的なAIの話し方との近さです。</p></div><p class="score-what">この数字は、<b>何も設定していないAIの話し方</b>と、あなたの話し方がどれくらい近いかを表しています。<b>低いほど「AIの返事が自分の言葉じゃない」と感じやすく</b>、設定の文章を入れたときの変化も大きく出ます。</p><a class="score-cta" href="#sister">この結果に合う「設定の文章」をつくる <span class="arrow" aria-hidden="true">→</span></a></article><article class="type-card"><small>あなたを動物にすると</small><h3 id="type-animal">—</h3><p class="type-sub" id="type-name">診断タイプ</p><p class="type-why" id="type-why"></p><p id="type-note"></p><div class="trait-box"><strong>こんなところ、ありませんか？</strong><ul class="trait-list" id="type-traits"></ul></div><div class="match-box"><div class="match-row"><span>話が合いそう</span><strong id="type-match-good">—</strong></div><div class="match-row"><span>いいコンビ</span><strong id="type-match-fill">—</strong></div></div></article><article class="metrics-card"><small>文章の特徴</small><div class="metric-list"><div class="metric-row"><span>ていねい度</span><div class="metric-track"><div class="metric-fill" id="formal-fill"></div></div><span id="formal-value">0</span></div><div class="metric-row"><span>文の長さ</span><div class="metric-track"><div class="metric-fill" id="length-fill"></div></div><span id="length-value">0</span></div><div class="metric-row"><span>絵文字</span><div class="metric-track"><div class="metric-fill" id="emoji-fill"></div></div><span id="emoji-value">0</span></div><div class="metric-row"><span>口ぐせ</span><div class="metric-track"><div class="metric-fill" id="phrase-fill"></div></div><span id="phrase-meter-value">0</span></div><div class="metric-row"><span>語彙の幅</span><div class="metric-track"><div class="metric-fill" id="vocab-fill"></div></div><span id="vocab-value">0</span></div></div><div class="phrase-box"><strong>見つかった口ぐせ</strong><span id="phrase-value">目立ったものなし</span></div><div class="name-wrap"><label class="sr-only" for="compare-name">比較用の名前</label><input id="compare-name" maxlength="16" placeholder="比較用の名前（例：わたし）"><button type="button" id="add-compare">比べるに追加</button></div></article></div></div><div class="result-actions"><button class="button button-white" type="button" id="save-card">診断カードを画像保存</button><button class="button button-outline" type="button" id="redo">別の文章で診断</button></div><div class="result-share"><p class="result-share-label">この結果を友だちに見せる</p><div class="name-wrap"><label class="sr-only" for="share-name">リンクに表示する名前</label><input id="share-name" maxlength="12" placeholder="名前（入れなくてもOK）"><button type="button" id="copy-link">リンクをコピー</button></div><p class="result-share-note" id="link-note">リンクを開くと、この結果だけが表示されます。貼りつけた文章と、見つかった口ぐせは含まれません。</p></div></div></section>
+    <section class="result dark-mesh" id="result" aria-labelledby="result-title" hidden><div class="shell"><div class="result-head"><div><p class="eyebrow">あなたの診断結果</p><h2 class="section-title" id="result-title"><span class="ghost">あなたは、</span><br>この動物。</h2></div><span class="result-badge">同じ文章なら、同じ結果</span></div><div class="result-grid"><div class="fingerprint-panel"><div class="art-wrap"><canvas id="fingerprint" width="900" height="900" role="img" aria-label="診断結果の動物"></canvas><span class="art-name" id="art-name">—</span></div><div class="fingerprint-id"><span>診断結果</span></div></div><div class="result-info"><article class="score-card"><div class="score-ring" id="score-ring"><strong id="score-value">0</strong></div><div class="score-copy"><small>AIしっくり度（100点満点）</small><h3 id="score-label">—</h3><p id="score-note">標準的なAIの話し方との近さです。</p></div><p class="score-what">この数字は、<b>何も設定していないAIの話し方</b>と、あなたの話し方がどれくらい近いかを表しています。<b>低いほど「AIの返事が自分の言葉じゃない」と感じやすく</b>、設定の文章を入れたときの変化も大きく出ます。</p><a class="score-cta" href="#sister">この結果に合う「設定の文章」をつくる <span class="arrow" aria-hidden="true">→</span></a></article><article class="type-card"><small>あなたを動物にすると</small><h3 id="type-animal">—</h3><p class="type-sub" id="type-name">診断タイプ</p><p class="type-why" id="type-why"></p><p id="type-note"></p><div class="trait-box"><strong>こんなところ、ありませんか？</strong><ul class="trait-list" id="type-traits"></ul></div><div class="match-box"><div class="match-row"><span>話が合いそう</span><strong id="type-match-good">—</strong></div><div class="match-row"><span>いいコンビ</span><strong id="type-match-fill">—</strong></div></div></article><article class="metrics-card"><small>文章の特徴</small><div class="metric-list"><div class="metric-row"><span>ていねい度</span><div class="metric-track"><div class="metric-fill" id="formal-fill"></div></div><span id="formal-value">0</span></div><div class="metric-row"><span>文の長さ</span><div class="metric-track"><div class="metric-fill" id="length-fill"></div></div><span id="length-value">0</span></div><div class="metric-row"><span>絵文字</span><div class="metric-track"><div class="metric-fill" id="emoji-fill"></div></div><span id="emoji-value">0</span></div><div class="metric-row"><span>口ぐせ</span><div class="metric-track"><div class="metric-fill" id="phrase-fill"></div></div><span id="phrase-meter-value">0</span></div><div class="metric-row"><span>語彙の幅</span><div class="metric-track"><div class="metric-fill" id="vocab-fill"></div></div><span id="vocab-value">0</span></div></div><div class="phrase-box"><strong>見つかった口ぐせ</strong><span id="phrase-value">目立ったものなし</span></div><div class="name-wrap"><label class="sr-only" for="compare-name">比較用の名前</label><input id="compare-name" maxlength="16" placeholder="比較用の名前（例：わたし）"><button type="button" id="add-compare">比べるに追加</button></div></article></div></div><div class="result-actions"><button class="button button-white" type="button" id="save-card">診断カードを画像保存</button><button class="button button-outline" type="button" id="redo">別の文章で診断</button></div><div class="result-share"><p class="result-share-label">この結果を友だちに見せる</p><div class="name-wrap"><label class="sr-only" for="share-name">リンクに表示する名前</label><input id="share-name" maxlength="12" placeholder="名前（入れなくてもOK）"><button type="button" id="copy-link">リンクをコピー</button></div><p class="result-share-note" id="link-note">リンクを開くと、この結果だけが表示されます。貼りつけた文章と、見つかった口ぐせは含まれません。</p></div></div></section>
     <section class="sister" id="sister"><div class="shell"><article class="sister-card reveal"><p class="eyebrow">診断のあとに</p><h2>“設定の文章”は、<br>ここで受け取れます。</h2><p>診断で分かったあなたの文体を、そのままAIへの設定文に。ChatGPT・Gemini・Claudeの設定欄に貼るだけで、返事があなたの言葉に近づきます。もちろん無料です。</p><a class="button button-white" href="../ai-shijibun-maker/index.html">設定の文章を受け取る <span class="arrow" aria-hidden="true">→</span></a></article></div></section>
     <section class="compare" aria-labelledby="compare-title"><div class="shell"><div class="compare-head"><div><p class="eyebrow reveal">みんなと比べる</p><h2 class="section-title reveal" id="compare-title"><span class="ghost">みんなの動物を、</span><br>並べてみる。</h2></div><p class="section-lead reveal">家族、友だち、同僚。順番に診断して追加すると、誰がどの動物で、誰がいちばん素のAIに近いかが見えてきます。</p></div><div class="compare-board"><p class="compare-empty" id="compare-empty">まだ並べた人がいません。診断結果から「比べるに追加」を押すと、ここに並びます。</p><div class="compare-list" id="compare-list" aria-live="polite"></div><div class="compare-actions"><button class="button button-dark" type="button" id="save-compare" hidden>比較カードを画像保存</button><button class="button button-outline" type="button" id="clear-compare" hidden>比較をクリア</button></div></div></div></section>
     <section class="history" aria-labelledby="history-title"><div class="shell"><div class="history-head"><div><p class="eyebrow">この端末に保存</p><h2 class="section-title" id="history-title">これまでの診断。</h2></div><p class="section-lead">この端末だけに、直近8件を保存しています。</p></div><div class="history-list" id="history-list"><p class="history-empty">まだ診断履歴はありません。</p></div></div></section>
-    <section class="share" aria-labelledby="share-title"><div class="shell"><p class="eyebrow">友だちにも教える</p><h2 class="section-title" id="share-title"><span class="ghost">話し方にも、</span><br>クセがあるらしい。</h2><p class="section-lead">やってみたら思ったより当たってた、を友だちにも。</p><div class="share-block"><p class="share-block-label">SNSで友達に送ろう</p><p class="share-block-sub">下のボタンでリンクがコピーされます。LINEやXにそのまま貼ってください。</p><p class="share-url" id="share-url">リンクを読み込んでいます</p><button class="share-copy" type="button" id="copy-app-link">リンクをコピー</button><p class="share-note" id="share-note">送られるのはアプリのリンクだけです。あなたが貼りつけた文章も、診断の結果も含まれません。</p></div></div></section>
+    <section class="share dark-mesh" aria-labelledby="share-title"><div class="shell"><p class="eyebrow">友だちにも教える</p><h2 class="section-title" id="share-title"><span class="ghost">話し方にも、</span><br>クセがあるらしい。</h2><p class="section-lead">やってみたら思ったより当たってた、を友だちにも。</p><div class="share-block"><p class="share-block-label">SNSで友達に送ろう</p><p class="share-block-sub">下のボタンでリンクがコピーされます。LINEやXにそのまま貼ってください。</p><p class="share-url" id="share-url">リンクを読み込んでいます</p><button class="share-copy" type="button" id="copy-app-link">リンクをコピー</button><p class="share-note" id="share-note">送られるのはアプリのリンクだけです。あなたが貼りつけた文章も、診断の結果も含まれません。</p></div></div></section>
   </main>
   <footer class="footer"><div class="shell footer-grid"><div><p><strong>株式会社タイガーラボ</strong><br>業務でのAI活用のご相談から、システム・アプリの開発まで承っています。</p></div><a href="https://tigerlabo.com" target="_blank" rel="noopener noreferrer">サービス案内・お問い合わせ →</a></div></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
